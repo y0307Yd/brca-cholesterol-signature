@@ -1,0 +1,10 @@
+analysis,trait,conditioning_snp,SNP,BP,unconditional_z,conditional_z,conditional_P,r_with_conditioning_snp,note
+coloc_full_window,eQTL_vs_GWAS,NA,rs12091730,155556971,NA,NA,NA,NA,PP.H4=0.9985 (3248 SNPs)
+coloc_pm1Mb,eQTL_vs_GWAS,NA,NA,NA,NA,NA,NA,NA,PP.H4=0.997 (1218 SNPs)
+coloc_pm500kb,eQTL_vs_GWAS,NA,NA,NA,NA,NA,NA,NA,PP.H4=0.996 (538 SNPs)
+coloc_pm250kb,eQTL_vs_GWAS,NA,NA,NA,NA,NA,NA,NA,PP.H4=0.997 (246 SNPs)
+conditional,eQTL,rs12091730,rs6677385,155304581,-9.65,-4.74,2.14e-06,0.55,no SNP remains P<5e-8 after conditioning
+conditional,GWAS,rs4971059,rs12091730,155556971,7.05,5.47,4.43e-08,NA,shared signal remains genome-wide significant
+conditional,GWAS,rs12091730,rs4971059,155148781,7.01,5.42,5.97e-08,NA,independent secondary GWAS signal
+conditional,GWAS,rs12091730,rs11264454,156153043,5.64,6.31,2.71e-10,-0.09,additional GWAS-only signal (no eQTL effect)
+conditional,GWAS,rs12091730,rs2990245,155197462,-6.05,-5.74,9.73e-09,-0.05,secondary-signal LD partner remains

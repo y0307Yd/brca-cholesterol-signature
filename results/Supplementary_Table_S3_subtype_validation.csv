@@ -1,0 +1,5 @@
+﻿subtype,n_tcga,ER_pos_frac_tcga,events_tcga,n_metabric,ER_pos_frac_metabric,events_metabric,survival_TCGA_logrank_p,survival_METABRIC_logrank_p,METABRIC_adjusted_Cox_C4_vs_C1
+1,142,0.136,23,231,0.156,93,0.331,7.8e-05,"HR 1.26 (0.95-1.67), P=0.12"
+2,352,0.938,41,806,0.926,289,0.331,7.8e-05,"HR 1.26 (0.95-1.67), P=0.12"
+3,296,0.975,34,571,0.94,241,0.331,7.8e-05,"HR 1.26 (0.95-1.67), P=0.12"
+4,162,0.601,24,371,0.501,180,0.331,7.8e-05,"HR 1.26 (0.95-1.67), P=0.12"

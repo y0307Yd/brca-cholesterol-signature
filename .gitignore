@@ -1,0 +1,21 @@
+# Raw data (download via data/download_data.py, do not commit)
+data/*
+!data/download_data.py
+
+# Intermediate matrices and logs
+*.npy
+*.npz
+*.log
+render_*/
+lo_profile/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+
+# Manuscript working files (only the final PDF is distributed)
+*.docx

@@ -1,0 +1,2 @@
+﻿cohort,n_survival,n_events,n_er,er_pos,er_neg,platform,hub_genes_mapped,er_classifier_auc,er_classifier_auc_ci_low,er_classifier_auc_ci_high,er_classifier_brier,fdps_er_mwu_p,fdps_er_cohens_d,fdps_hr_univ,fdps_p_univ,fdps_logrank_p
+GSE7390,198,91,198,134,64,GPL96,11,0.9029850746268656,0.8480698177158187,0.9492139902836134,0.11937808989651363,4.775381324047471e-05,-0.6755661877084268,1.017587366758085,0.870179142256271,0.7575639278373851
