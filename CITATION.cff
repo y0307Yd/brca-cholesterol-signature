@@ -3,6 +3,8 @@ message: "If you use this pipeline or its results, please cite the manuscript an
 title: "Cholesterol metabolism gene signatures distinguish estrogen-receptor status and define immune-relevant molecular subtypes of breast cancer"
 type: software
 license: MIT
+doi: 10.5281/zenodo.21873168
+url: "https://github.com/y0307Yd/brca-cholesterol-signature"
 authors:
   - family-names: "To be completed on submission"
     given-names: ""

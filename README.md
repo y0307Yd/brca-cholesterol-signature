@@ -1,5 +1,7 @@
 # Cholesterol metabolism in breast cancer: an integrated multi-omics study
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21873168.svg)](https://doi.org/10.5281/zenodo.21873168)
+
 This repository provides the reproducible analysis pipeline for the manuscript
 "Cholesterol Metabolism Gene Signatures Distinguish Estrogen-Receptor Status
 and Define Immune-Relevant Molecular Subtypes of Breast Cancer".
