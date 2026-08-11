@@ -6,7 +6,8 @@ BiocManager::install(c(
   "org.Hs.eg.db",   # cholesterol gene set annotation
   "hgu133a.db"      # GSE7390 (U133A) probe mapping
 ))
-install.packages(c("susieR", "coloc"), repos = "https://cloud.r-project.org")
+install.packages(c("susieR", "coloc", "e1071"),
+                 repos = "https://cloud.r-project.org")
 
 # Versions used in the manuscript analyses:
 #   susieR 0.14.2, coloc 5.2.3, org.Hs.eg.db 3.23.1,

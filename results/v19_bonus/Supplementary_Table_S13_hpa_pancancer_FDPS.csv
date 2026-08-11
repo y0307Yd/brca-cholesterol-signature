@@ -1,0 +1,29 @@
+﻿item,value
+UniProt ID,P14324
+HPA antibody,HPA028200
+Antibody reliability (IH),Approved
+Subcellular main location,Cytosol
+Subcellular additional location,Nucleoplasm
+Protein tissue specificity,Tissue enhanced
+RNA tissue specificity,Tissue enhanced
+BC TCGA protein prognosis,"unprognostic, P=1.95e-1"
+BC validation protein prognosis,"unprognostic, P=2.29e-2"
+Biological process,Cholesterol biosynthesis; Cholesterol metabolism; Host-virus interaction; Isoprene biosynthesis; Lipid biosynthesis; Lipid metabolism; Steroid biosynthesis; Steroid metabolism
+pan-cancer expression: CESC,detected (n = 294)
+pan-cancer expression: ACC,detected (n = 78)
+pan-cancer expression: CHOL,detected (n = 36)
+pan-cancer expression: THYM,detected (n = 119)
+pan-cancer expression: UCEC,detected (n = 527)
+pan-cancer expression: STAD,detected (n = 412)
+pan-cancer expression: UCS,detected (n = 57)
+pan-cancer expression: BLCA,detected (n = 407)
+pan-cancer expression: BRCA,detected (n = 1082)
+pan-cancer expression: SARC,detected (n = 253)
+pan-cancer expression: TGCT,detected (n = 149)
+pan-cancer expression: LGG,detected (n = 514)
+pan-cancer expression: PRAD,detected (n = 493)
+pan-cancer expression: UVM,detected (n = 80)
+pan-cancer expression: PCPG,detected (n = 178)
+pan-cancer expression: LAML,detected (n = 173)
+pan-cancer expression: THCA,detected (n = 498)
+pan-cancer summary,detected in all 17 cancer types with available RNA-seq

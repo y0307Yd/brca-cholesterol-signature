@@ -16,6 +16,9 @@
 | BCAC overall / TNBC | GWAS Catalog GCST010098 / GCST010100 | GWAS Catalog terms; cite Zhang et al. 2020 |
 | BCAC OncoArray ER+/ER- | GWAS Catalog GCST004988 | GWAS Catalog terms; cite Michailidou et al. 2017. The original BCAC release prohibits reposting to third-party sites; use the download script and cite the source |
 | 1000 Genomes Phase 3 EUR | 1000 Genomes project | Public |
+| LM22 signature matrix | Newman et al. 2015 (Nat Methods); mirror in `data/lm22.txt` from the public CIBERSORTx repository | Used for CIBERSORT deconvolution; cite Newman et al. 2015 |
+| HPA FDPS entry | Human Protein Atlas (proteinatlas.org/ENSG00000160752) | Public; cite Uhlen et al. 2015 |
+| cBioPortal pan-cancer FDPS RNA-seq | cBioPortal datahub | Public; cite Cerami et al. 2012 |
 
 Raw data are not redistributed in this repository. Run `data/download_data.py`
 to fetch them, and comply with each source's terms of use.

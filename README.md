@@ -9,10 +9,12 @@ and Define Immune-Relevant Molecular Subtypes of Breast Cancer".
 ## Study design
 
 TCGA-BRCA (discovery) and METABRIC (external) were combined with WGCNA,
-machine-learning feature selection, consensus clustering, single-cell
-localisation, SMR/HEIDI Mendelian randomisation, Bayesian colocalisation
-(coloc.abf and SuSiE/coloc.susie), methylation-expression correlation and
-three independent Affymetrix validation cohorts (GSE21653, GSE7390, METABRIC).
+machine-learning feature selection, consensus clustering, immune
+deconvolution (CIBERSORT/ESTIMATE/ssGSEA), single-cell localisation,
+SMR/HEIDI Mendelian randomisation, Bayesian colocalisation (coloc.abf,
+SuSiE/coloc.susie, and LIPA/FAXDC2/SREBF1 loci), methylation-expression
+correlation, HPA protein evidence, pan-cancer expression and two independent
+Affymetrix validation cohorts (GSE21653, GSE7390) plus METABRIC.
 
 ## Quick start
 
@@ -23,8 +25,8 @@ python data/download_data.py --dir ../data
 # run the pipeline in order (see README section "Pipeline order")
 ```
 
-R scripts require R >= 4.6 with `susieR`, `coloc`, `BiocManager` and
-`hgu133a.db` (used for the GSE7390 probe mapping).
+R scripts require R >= 4.6 with `susieR`, `coloc`, `e1071` (CIBERSORT),
+`BiocManager` and `hgu133a.db` (used for the GSE7390 probe mapping).
 
 ## Pipeline order
 
@@ -41,19 +43,44 @@ R scripts require R >= 4.6 with `susieR`, `coloc`, `BiocManager` and
 6. `coloc_fdps.py`, `coloc_sens.py`, `fdps_conditional.py`,
    `fdps_fstat_credset.py`, `prep_susie_fdps.py`, `susie_coloc_fdps.R`
    (colocalisation)
+7. `bonus_analyses.py` (immune-checkpoint genes by subtype; LASSO bootstrap
+   stability), `bonus_cibersort.R` (CIBERSORT nu-SVR with LM22),
+   `subtype_geo_validation.py` (nearest-centroid subtype mapping in
+   GSE21653/GSE7390), `coloc_bonus.py` (LIPA/FAXDC2/SREBF1 colocalisation)
+8. `make_lipid_sig_comparison.py`, `make_tripod_checklist.py`,
+   `make_flowchart_v19.py`, `make_graphical_abstract.py` (reporting and
+   submission artefacts)
 
 ## Key results
 
 - 11-gene cholesterol-metabolism ER classifier: TCGA CV AUC 0.946, METABRIC
   AUC 0.922, GSE21653 AUC 0.847, GSE7390 AUC 0.903.
+- LASSO selection stability: all 11 hub genes selected in >= 73.7% of 300
+  bootstrap resamples (mean 90.2%).
+- Subtype ER gradient reproduced by nearest-centroid mapping in GSE21653
+  (P = 4.2e-16) and GSE7390 (P = 4.7e-16); survival differences significant
+  in GSE21653 (log-rank P = 0.026), not in GSE7390 (P = 0.48).
+- Immune deconvolution: ESTIMATE ImmuneScore highest in C1 (P = 1.9e-3);
+  CIBERSORT C1 enrichment of M1/M0 macrophages, activated DC, Tfh, monocytes
+  and activated NK; checkpoint genes CD274/PDCD1/CTLA4/LAG3/IDO1 highest in
+  C1 (P = 4.9e-5 to 1.7e-20).
 - FDPS is a putatively causal protective gene for breast cancer risk
   (SMR P = 9.8e-7; ER+ P = 1.5e-5 in the BCAC OncoArray sensitivity analysis).
 - Single-causal-variant coloc.abf gives PP.H4 = 0.9985; SuSiE-based
   multi-signal colocalisation is less conclusive (max PP.H4 = 0.44).
+- LIPA/FAXDC2/SREBF1 colocalisation is eQTL-driven without strong shared
+  variants (PP.H4 = 0.035/0.043/0.171), reported as a sensitivity negative.
+- HPA confirms cytoplasmic FDPS protein with tissue-enhanced breast
+  expression; FDPS mRNA detected in all 17 queried TCGA cancer types.
+
+Manuscript v19 (docx + pdf), the graphical abstract, the updated study-design
+flowchart and TRIPOD-AI checklist are included under `manuscript/` and
+`results/figures/`; new supplementary tables S11-S15 are in
+`results/v19_bonus/`.
 
 Figure files in `results/figures/` are named `figNN_*.png` (and 300-dpi
 `figNN_*.tiff`), where NN is the figure number in the manuscript (Figures
-1-16; `Supplementary_*.png` are Supplementary Figures S1-S2).
+1-16; `Supplementary_*.png` are Supplementary Figures S1-S3).
 
 ## Citation
 
