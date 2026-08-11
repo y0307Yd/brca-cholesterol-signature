@@ -74,10 +74,14 @@ R scripts require R >= 4.6 with `susieR`, `coloc`, `e1071` (CIBERSORT),
 - HPA confirms cytoplasmic FDPS protein with tissue-enhanced breast
   expression; FDPS mRNA detected in all 17 queried TCGA cancer types.
 
-Manuscript v20 (docx + pdf), the graphical abstract, the updated study-design
-flowchart and TRIPOD-AI checklist are included under `manuscript/` and
-`results/figures/`; new supplementary tables S11-S16 are in
-`results/v19_bonus/`.
+Manuscript v21 (docx + pdf) is the content-complete version: it restores the
+full methodological and descriptive detail of the original draft while
+retaining all later additions (immune deconvolution, GSE20711, LIPA/FAXDC2/
+SREBF1 colocalisation, HPA/pan-cancer evidence, comparison table and
+TRIPOD-AI checklist). v20 is the word-limited submission variant. The
+graphical abstract, the updated study-design flowchart and the TRIPOD-AI
+checklist are included under `manuscript/` and `results/figures/`; new
+supplementary tables S11-S16 are in `results/v19_bonus/`.
 
 Figure files in `results/figures/` are named `figNN_*.png` (and 300-dpi
 `figNN_*.tiff`), where NN is the figure number in the manuscript (Figures
