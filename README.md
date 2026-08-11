@@ -76,7 +76,7 @@ R scripts require R >= 4.6 with `susieR`, `coloc`, `e1071` (CIBERSORT),
 
 Manuscript v20 (docx + pdf), the graphical abstract, the updated study-design
 flowchart and TRIPOD-AI checklist are included under `manuscript/` and
-`results/figures/`; new supplementary tables S11-S15 are in
+`results/figures/`; new supplementary tables S11-S16 are in
 `results/v19_bonus/`.
 
 Figure files in `results/figures/` are named `figNN_*.png` (and 300-dpi
