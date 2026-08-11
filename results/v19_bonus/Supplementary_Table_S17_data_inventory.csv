@@ -1,0 +1,19 @@
+﻿Dataset,Source,Content,Reference/use
+TCGA-BRCA expression/clinical/methylation,NCI GDC portal,"STAR-counts, clinical XML, HM450","MD5-verified (4,393/4,393 files)"
+TCGA-CDR outcomes,Liu et al. 2018,PFI,Public
+METABRIC,cBioPortal DataHub,Illumina expression + RFS,Curtis et al. 2012
+PAM50 calls (TCGA),UCSC Xena GDC hub,PAM50 labels,Public
+FDPS HM450 methylation,cBioPortal brca_tcga_methylation_hm450,beta values,Public
+GSE21653,NCBI GEO (GPL570),series matrix + GPL570.annot,Sabatier et al. 2011
+GSE7390,ArrayExpress E-GEOD-7390 (GPL96),processed matrix + SDRF,Desmedt et al. 2007
+GSE20711,NCBI GEO (GPL570),series matrix,Fackler et al. 2011
+GSE176078,CELLxGENE,"100,064-cell atlas",Wu et al. 2021
+GSE161529,Mendeley Data mirror,"70,419-cell atlas",Pal et al. 2021
+eQTLGen cis-eQTLs,eQTLGen consortium,SMR-format BESD,Vosa et al. 2021
+GTEx v8,Yang Lab SMR database / GTEx Portal,breast-mammary + whole-blood BESD,GTEx Consortium
+BCAC overall/TNBC GWAS,GWAS Catalog GCST010098/GCST010100,SMR-format .ma,Zhang et al. 2020
+BCAC OncoArray ER+/ER-,GWAS Catalog GCST004988,ER-stratified summary statistics,Michailidou et al. 2017
+1000 Genomes Phase 3 EUR,1000 Genomes Project,LD reference,Public
+LM22 signature matrix,Newman et al. 2015 (CIBERSORTx mirror),22 immune cell types,Public
+HPA FDPS entry,Human Protein Atlas ENSG00000160752,protein/RNA evidence,Uhlen et al. 2015
+Pan-cancer FDPS RNA-seq,cBioPortal datahub,17 TCGA studies,Cerami et al. 2012

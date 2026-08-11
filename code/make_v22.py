@@ -1,7 +1,16 @@
 # -*- coding: utf-8 -*-
-"""Generate content-complete v21 from v20.
+"""Generate content-complete v22 from v21.
 
-v21 restores the full methodological and descriptive detail present in v15
+v22 adds round-2 bonus evidence on top of v21:
+1. METABRIC immune-checkpoint gene validation by mapped subtype
+   (Supplementary Table S18).
+2. GSE20711 exploratory subtype mapping and validation figure
+   (Supplementary Figure S4).
+3. LASSO selection-frequency figure (Supplementary Figure S5).
+4. CIBERSORT subtype heatmap (Supplementary Figure S6).
+5. Data inventory table (Supplementary Table S17).
+
+v21 restored the full methodological and descriptive detail present in v15
 (which had been compressed for a word-limited journal), while retaining all
 v19/v20 additions: immune deconvolution (CIBERSORT/ESTIMATE), immune
 checkpoint genes, LASSO bootstrap stability, GEO subtype external validation,
@@ -17,9 +26,9 @@ from docx.oxml.ns import qn
 from docx.text.paragraph import Paragraph
 
 SRC = (r"C:\Users\Y\Documents\Codex\2026-08-06\new-chat\outputs\chol_metab_signature"
-       r"\Manuscript_Cholesterol_Metabolism_BRCA_v20.docx")
-OUT = (r"C:\Users\Y\Documents\Codex\2026-08-06\new-chat\outputs\chol_metab_signature"
        r"\Manuscript_Cholesterol_Metabolism_BRCA_v21.docx")
+OUT = (r"C:\Users\Y\Documents\Codex\2026-08-06\new-chat\outputs\chol_metab_signature"
+       r"\Manuscript_Cholesterol_Metabolism_BRCA_v22.docx")
 
 
 def set_text(p, bold_part, body_part):
@@ -57,17 +66,6 @@ REPL["Cholesterol and its derivatives support"] = (
     "intersection, an ER-focused classifier validated across four "
     "independent expression cohorts, and a germline causal-inference layer "
     "for FDPS.")
-
-REPL["We applied a five-layer bioinformatics framework"] = (
-    "",
-    "A widely used bioinformatics template proceeds from whole-transcriptome "
-    "screening (WGCNA plus a pathway gene set) to machine-learning target "
-    "reduction, clinical model building, molecular subtyping, single-cell "
-    "localization and Mendelian-randomization causal testing. We applied "
-    "this template to breast cancer using cholesterol metabolism as the "
-    "biological anchor, with TCGA-BRCA and METABRIC as discovery and "
-    "external cohorts, and we report the completed evidence chain from "
-    "screening to causal inference.")
 
 REPL["2.1 Data sources and verification"] = (
     "2.1 Data sources and verification ",
@@ -195,7 +193,7 @@ REPL["At soft-threshold power"] = (
     "associations, most notably M2314 (157 genes; r = -0.794, "
     "BH-FDR ~ 4e-197).")
 
-REPL["The strict intersection of trait-associated modules with the 120-gene"] = (
+REPL["Strictly intersecting any trait-associated module"] = (
     "",
     "Strictly intersecting any trait-associated module with the 120-gene "
     "cholesterol set yielded zero genes: the PFI module (M2238) and the ER "
@@ -233,7 +231,7 @@ REPL["3.3 Hub genes and the ER-status classifier"] = (
     "after adjustment for ER status and stage (HR 0.90, 95% CI 0.82-0.98, "
     "P = 0.013).")
 
-REPL["Consensus clustering selected k = 4"] = (
+REPL["Consensus clustering of hub-gene expression selected k = 4"] = (
     "",
     "Consensus clustering of hub-gene expression selected k = 4 "
     "(PAC = 0.097; k = 3 PAC 0.113, k = 5 PAC 0.185). The four subtypes "
@@ -542,25 +540,6 @@ REPL["4.1 Principal findings"] = (
     "tumour FDPS expression was strongly ER-associated but not "
     "independently prognostic.")
 
-REPL["GTEx v8 breast-mammary sensitivity"] = (
-    "",
-    "Each layer of the framework was completed with real data. First, the "
-    "strict WGCNA-by-pathway intersection was empty: cholesterol "
-    "metabolism genes do not participate in the PFI-associated "
-    "co-expression module, and no single cholesterol gene was associated "
-    "with progression at P < 0.10. Second, a pathway-first adaptation "
-    "produced an 11-gene cholesterol signature that discriminated ER "
-    "status with strong, cross-platform performance (TCGA CV AUC 0.946 "
-    "+/- 0.012; METABRIC AUC 0.922; GSE21653 0.847; GSE7390 0.903; "
-    "GSE20711 0.833). Third, hub-gene-based consensus clustering defined "
-    "four subtypes with strongly divergent ER composition and immune "
-    "infiltration, although survival differences were not significant in "
-    "the 122-event discovery cohort. A GTEx v8 breast-mammary sensitivity "
-    "analysis directionally replicated LIPA and FAXDC2 (both "
-    "HEIDI-supported) but could not instrument FDPS in breast tissue; "
-    "GTEx v8 whole blood lacked a significant FDPS cis-eQTL instrument, "
-    "consistent with the power available at n = 670.")
-
 REPL["The ER-status signal is biologically coherent"] = (
     "",
     "The ER-status signal is biologically coherent: ER+ tumours "
@@ -579,7 +558,7 @@ REPL["The ER-status signal is biologically coherent"] = (
     "independently of ER status, and FDPS expression was highest in Basal "
     "and HER2-enriched intrinsic subtypes (Figure 10).")
 
-REPL["The four subtypes recapitulate known breast cancer biology"] = (
+REPL["The four cholesterol-metabolism subtypes recapitulate"] = (
     "",
     "The four cholesterol-metabolism subtypes recapitulate known breast "
     "cancer biology: C1 is predominantly ER-negative, proliferative "
@@ -656,6 +635,48 @@ REPL["4.6 Causal inference"] = (
     "possible sensitivity analyses; multi-signal colocalisation was less "
     "conclusive (maximum PP.H4 = 0.44).")
 
+# paragraphs that receive appended sentences after the REPL pass
+APPEND = [
+    ("3.3 Hub genes and the ER-status classifier",
+     "LASSO selection frequencies across the 300 bootstrap resamples are "
+     "shown in Supplementary Figure S5."),
+    ("3.5 Immune microenvironment and pathway programs",
+     "In METABRIC, all seven immune-checkpoint genes were also highest in "
+     "C1 (Kruskal-Wallis P = 7.6e-7 to 1.9e-50), including HAVCR2 and "
+     "CD8A (P = 3.1e-12 and 1.0e-6) that were not subtype-discriminative "
+     "in TCGA, confirming cross-cohort consistency (Supplementary Table "
+     "S18). CIBERSORT median fractions by subtype are shown in "
+     "Supplementary Figure S6."),
+    ("3.13 Independent validation in GSE21653",
+     "Exploratory nearest-centroid subtype mapping in GSE20711 gave ER "
+     "fractions of 15.8%, 58.1%, 79.2% and 15.4% for C1-C4 with a "
+     "borderline global survival difference (log-rank P = 0.055); the "
+     "small cohort (n = 88) limits interpretation (Supplementary Figure "
+     "S4)."),
+]
+
+REPL["Data availability."] = (
+    "Data availability. ",
+    "All data are public: TCGA-BRCA (NCI GDC; accessed 4-6 August 2026) "
+    "and TCGA-CDR [14]; METABRIC (cBioPortal) [15]; PAM50 calls (UCSC "
+    "Xena); FDPS HM450 methylation (cBioPortal); GSE21653 (NCBI GEO); "
+    "GSE7390 (ArrayExpress E-GEOD-7390); GSE20711 (NCBI GEO); GSE176078 "
+    "(CELLxGENE); GSE161529 (Mendeley Data mirror of the Pal et al. atlas "
+    "[12]); eQTLGen [35]; GTEx v8 [38,39]; BCAC GWAS (GWAS Catalog "
+    "GCST010098/GCST010100/GCST004988; Zhang et al. 2020 [36] and "
+    "Michailidou et al. 2017 [37]); 1000 Genomes Phase 3 EUR. A complete "
+    "data inventory with accessions and usage notes is provided in "
+    "Supplementary Table S17. Curated intermediate results are provided "
+    "in the GitHub repository "
+    "(https://github.com/y0307Yd/brca-cholesterol-signature) and the "
+    "Zenodo archive (https://doi.org/10.5281/zenodo.21873168); raw data "
+    "must be obtained from the original sources under their respective "
+    "data-use policies. Supplementary Tables S1-S18 and Supplementary "
+    "Figures S1-S6 accompany this manuscript; the TRIPOD-AI checklist "
+    "(Supplementary Table S12), a comparison with published "
+    "lipid-metabolism signatures (S11) and a graphical abstract are also "
+    "provided in the repository.")
+
 
 def main():
     doc = docx.Document(SRC)
@@ -666,6 +687,10 @@ def main():
         assert len(hits) == 1, f"{key!r}: {len(hits)} matches"
         set_text(hits[0], bold, body)
         matched.add(hits[0]._p)
+    for key, sentence in APPEND:
+        hits = [p for p in paras if p.text.strip().startswith(key)]
+        assert len(hits) == 1, f"append {key!r}: {len(hits)} matches"
+        hits[0].add_run(" " + sentence)
     # remove the legacy duplicate of the 2.5 methods paragraph (v15 remnant)
     removed = 0
     for p in doc.paragraphs:
