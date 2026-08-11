@@ -13,8 +13,8 @@ machine-learning feature selection, consensus clustering, immune
 deconvolution (CIBERSORT/ESTIMATE/ssGSEA), single-cell localisation,
 SMR/HEIDI Mendelian randomisation, Bayesian colocalisation (coloc.abf,
 SuSiE/coloc.susie, and LIPA/FAXDC2/SREBF1 loci), methylation-expression
-correlation, HPA protein evidence, pan-cancer expression and two independent
-Affymetrix validation cohorts (GSE21653, GSE7390) plus METABRIC.
+correlation, HPA protein evidence, pan-cancer expression and three independent
+Affymetrix validation cohorts (GSE21653, GSE7390, GSE20711) plus METABRIC.
 
 ## Quick start
 
@@ -48,13 +48,14 @@ R scripts require R >= 4.6 with `susieR`, `coloc`, `e1071` (CIBERSORT),
    `subtype_geo_validation.py` (nearest-centroid subtype mapping in
    GSE21653/GSE7390), `coloc_bonus.py` (LIPA/FAXDC2/SREBF1 colocalisation)
 8. `make_lipid_sig_comparison.py`, `make_tripod_checklist.py`,
-   `make_flowchart_v19.py`, `make_graphical_abstract.py` (reporting and
+   `make_flowchart_v20.py`, `make_graphical_abstract.py` (reporting and
    submission artefacts)
+9. `finish_geo_gse20711.py` (fourth validation cohort, n = 88)
 
 ## Key results
 
 - 11-gene cholesterol-metabolism ER classifier: TCGA CV AUC 0.946, METABRIC
-  AUC 0.922, GSE21653 AUC 0.847, GSE7390 AUC 0.903.
+  AUC 0.922, GSE21653 AUC 0.847, GSE7390 AUC 0.903, GSE20711 AUC 0.833.
 - LASSO selection stability: all 11 hub genes selected in >= 73.7% of 300
   bootstrap resamples (mean 90.2%).
 - Subtype ER gradient reproduced by nearest-centroid mapping in GSE21653
@@ -73,7 +74,7 @@ R scripts require R >= 4.6 with `susieR`, `coloc`, `e1071` (CIBERSORT),
 - HPA confirms cytoplasmic FDPS protein with tissue-enhanced breast
   expression; FDPS mRNA detected in all 17 queried TCGA cancer types.
 
-Manuscript v19 (docx + pdf), the graphical abstract, the updated study-design
+Manuscript v20 (docx + pdf), the graphical abstract, the updated study-design
 flowchart and TRIPOD-AI checklist are included under `manuscript/` and
 `results/figures/`; new supplementary tables S11-S15 are in
 `results/v19_bonus/`.

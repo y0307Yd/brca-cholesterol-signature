@@ -1,0 +1,2 @@
+﻿cohort,n_survival,n_events,n_er,er_pos,er_neg,platform,hub_genes_mapped,er_classifier_auc,er_classifier_auc_ci_low,er_classifier_auc_ci_high,er_classifier_brier,fdps_probe,fdps_er_mwu_p,fdps_er_cohens_d,fdps_hr_univ,fdps_hr_univ_ci_low,fdps_hr_univ_ci_high,fdps_p_univ,fdps_logrank_p
+GSE20711,88,39,87,42,45,GPL570,11,0.8328042328042328,0.7389805799531399,0.9129290861081274,0.22596133597113946,201275_at,0.0023921377698308635,-0.6378725946237663,0.9736588016862787,0.720546248280775,1.3156844052177328,0.8620273682757702,0.9247551251061255
