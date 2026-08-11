@@ -74,14 +74,16 @@ R scripts require R >= 4.6 with `susieR`, `coloc`, `e1071` (CIBERSORT),
 - HPA confirms cytoplasmic FDPS protein with tissue-enhanced breast
   expression; FDPS mRNA detected in all 17 queried TCGA cancer types.
 
-Manuscript v22 (docx + pdf) is the current content-complete version: it
+Manuscript v23 (docx + pdf) is the current content-complete version: it
 restores the full methodological detail of the original draft, retains all
 later additions (immune deconvolution, GSE20711, LIPA/FAXDC2/SREBF1
 colocalisation, HPA/pan-cancer evidence, comparison table and TRIPOD-AI
-checklist), and adds round-2 evidence: METABRIC immune-checkpoint validation
+checklist), and adds round-2/3 evidence: METABRIC immune-checkpoint validation
 (Table S18), GSE20711 subtype mapping and figure (Figure S4), LASSO
-selection-frequency and CIBERSORT heatmap figures (S5-S6), and a complete
-data inventory (Table S17). v21 is the equivalent version without round-2
+selection-frequency and CIBERSORT heatmap figures (S5-S6), a complete
+data inventory (Table S17) and a pathway-activity panel across subtypes
+(Figure S7), which also corrected the Discussion statement about
+cholesterol-synthesis-high subtypes. v22 is the version without round-3
 additions; v20 is the word-limited submission variant. The graphical
 abstract, the updated study-design flowchart and the TRIPOD-AI checklist are
 included under `manuscript/` and `results/figures/`; supplementary tables
