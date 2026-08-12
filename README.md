@@ -51,6 +51,17 @@ R scripts require R >= 4.6 with `susieR`, `coloc`, `e1071` (CIBERSORT),
    `make_flowchart_v20.py`, `make_graphical_abstract.py` (reporting and
    submission artefacts)
 9. `finish_geo_gse20711.py` (fourth validation cohort, n = 88)
+10. `complete_v25_additions.py` (corrected sample-level TIDE mapping and
+    ER/PAM50-adjusted sensitivity analysis)
+11. `add_v27_robustness.py` (random-forest robustness, negative controls and
+    external AUC meta-analysis)
+12. `add_v28_stability_immune.py` (k = 3/4/5 resampling stability and the
+    adjusted 50-feature immune analysis)
+
+The v26-v28 scripts read large local intermediates that are excluded from Git.
+Set `BRCA_CHOL_PROJECT_ROOT` to the complete analysis-data directory and,
+optionally, `BRCA_CHOL_OUTPUT_DIR` to the desired output directory. Without the
+second variable, generated files are written to `reproduction_output/`.
 
 ## Key results
 
@@ -73,8 +84,21 @@ R scripts require R >= 4.6 with `susieR`, `coloc`, `e1071` (CIBERSORT),
   variants (PP.H4 = 0.035/0.043/0.171), reported as a sensitivity negative.
 - HPA confirms cytoplasmic FDPS protein with tissue-enhanced breast
   expression; FDPS mRNA detected in all 17 queried TCGA cancer types.
+- Locked-signature robustness: random-forest validation AUC 0.946; the locked
+  11-gene model exceeded random pathway-gene sets and permuted-label controls
+  (both empirical P = 0.0033); random-effects pooled external AUC 0.885.
+- Four-cluster stability: k = 4 had the lowest PAC (0.0967), median ARI 0.930,
+  held-out label retention 97.4% and mean cluster Jaccard 0.947 across 200
+  resamples. k = 3 remained a more parsimonious competitor with slightly
+  stronger resampling indices.
+- Of 50 immune features, 38 remained subtype-associated after ER adjustment
+  and 19 after PAM50 adjustment at model-wide BH-FDR < 0.05, indicating partial
+  but incomplete explanation by intrinsic subtype and tumour context.
 
-Manuscript v25 (docx + pdf) is the current content-complete version: it
+Manuscript v28 (PDF) is the current content-complete version. It
+adds corrected TIDE sample mapping, locked-signature robustness analyses,
+four-subtype resampling stability and ER/PAM50-adjusted analysis of 50 immune
+features. Manuscript v25
 restores the full methodological detail of the original draft, retains all
 later additions (immune deconvolution, GSE20711, LIPA/FAXDC2/SREBF1
 colocalisation, HPA/pan-cancer evidence, comparison table and TRIPOD-AI
@@ -92,7 +116,8 @@ Table S20); TIDE scores are provided as exploratory results in
 v20 is the word-limited submission variant. The graphical
 abstract, the updated study-design flowchart and the TRIPOD-AI checklist are
 included under `manuscript/` and `results/figures/`; supplementary tables
-S11-S21 are in `results/v19_bonus/`.
+S11-S27 are in `results/v19_bonus/`. The exact increment since the previous
+GitHub release is listed in `GITHUB_UPLOAD_MANIFEST_v28.md`.
 
 Figure files in `results/figures/` are named `figNN_*.png` (and 300-dpi
 `figNN_*.tiff`), where NN is the figure number in the manuscript (Figures

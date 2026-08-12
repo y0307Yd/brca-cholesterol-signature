@@ -9,6 +9,7 @@ data/*
 *.log
 render_*/
 lo_profile/
+reproduction_output/
 
 # OS/editor
 .DS_Store

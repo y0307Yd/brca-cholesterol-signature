@@ -1,0 +1,27 @@
+{
+  "stability_k4": {
+    "PAC_0.1_0.9": 0.09667400083061616,
+    "silhouette": 0.14036750960029842,
+    "mean_cluster_consensus": 0.9355852318993666,
+    "minimum_cluster_consensus": 0.8404785333818704,
+    "median_adjusted_rand_index": 0.9303971421156101,
+    "ARI_2.5pct": 0.8539531198323633,
+    "ARI_97.5pct": 0.9643332537535698,
+    "median_sample_retention": 0.9737394957983193,
+    "retention_2.5pct": 0.9411239495798319,
+    "retention_97.5pct": 0.9863707983193278,
+    "median_mean_cluster_jaccard": 0.9472522145596368,
+    "median_minimum_cluster_jaccard": 0.8994248124028958,
+    "median_heldout_adjusted_rand_index": 0.9282135729408698,
+    "median_heldout_sample_retention": 0.9738219895287958,
+    "heldout_retention_2.5pct": 0.937041884816754,
+    "heldout_retention_97.5pct": 0.9947643979057592,
+    "median_heldout_mean_cluster_jaccard": 0.9437315226145013,
+    "n_resamples": 200.0,
+    "resample_fraction": 0.8
+  },
+  "immune_significant_ER": 38,
+  "immune_significant_PAM50": 19,
+  "immune_features": 50,
+  "manuscript": "Manuscript_Cholesterol_Metabolism_BRCA_v28.docx"
+}

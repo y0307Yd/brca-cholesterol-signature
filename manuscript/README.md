@@ -1,8 +1,9 @@
 # Manuscript
 
-The submission manuscript is intentionally not included in this public
-repository to preserve authorship anonymity during double-blind peer review.
-The final version will be deposited in Zenodo upon acceptance and linked here.
+Only PDF snapshots are included in this public repository. Editable DOCX files
+and submission metadata are excluded. The corresponding versioned archive will
+be deposited in Zenodo and linked from the repository.
 
-Analysis scripts, curated results and all figures (PNG and 300-dpi TIFF) are in
-`code/` and `results/`.
+Manuscript v28 is the current content-complete snapshot. Analysis scripts,
+curated results and web/vector figure files are in `code/` and `results/`;
+large production TIFF files for the v26-v28 increment are reserved for Zenodo.

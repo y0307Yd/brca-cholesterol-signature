@@ -1,0 +1,30 @@
+{
+  "random_forest": {
+    "hub_top20_n": 6,
+    "hub_top30_n": 7,
+    "median_hub_rank": 16.0,
+    "jaccard_rf20_rfe12": 0.28,
+    "rf_auc_mean": 0.9460435733046217,
+    "rf_auc_sd": 0.015033234672229563
+  },
+  "negative_controls": {
+    "observed_auc": 0.944969003338102,
+    "random_median": 0.8344471694257101,
+    "random_95_low": 0.7576723550650589,
+    "random_95_high": 0.8990740173036311,
+    "random_empirical_p": 0.0033222591362126247,
+    "permuted_median": 0.49896791334559565,
+    "permuted_95_low": 0.4313819061243953,
+    "permuted_95_high": 0.5554359970025206,
+    "permuted_empirical_p": 0.0033222591362126247
+  },
+  "auc_meta": {
+    "pooled_auc": 0.8847113641807011,
+    "pooled_low": 0.8262504654031292,
+    "pooled_high": 0.925280928439722,
+    "Q": 15.9550190721157,
+    "Q_p": 0.0011583191511819026,
+    "I2": 81.19713936761727,
+    "tau2": 0.18186311300039332
+  }
+}
